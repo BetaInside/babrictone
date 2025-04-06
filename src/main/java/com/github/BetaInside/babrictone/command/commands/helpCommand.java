@@ -10,19 +10,33 @@ public class helpCommand extends command {
 
     public helpCommand() {
 
-        super("help", false, "View all commands");
+        super("help", false, "View all commands", "help <command>");
 
     }
 
-    public void onEnable() {
+    public void onEnable(String[] args) {
 
-        chatUtil.addMessage("All babrictone commands: ");
+        if(args.length == 0) {
 
-        for(command c : commands) {
-            chatUtil.addMessage(c.name + fontColorUtil.DARK_GRAY+ " - " + c.description);
+            chatUtil.addMessage("All babrictone commands: ");
+
+            for(command c : commands) {
+                chatUtil.addMessage(c.name + fontColorUtil.DARK_GRAY+ " - " + c.description);
+            }
+
+            enabled = false;
+
+        } else {
+
+            for(command c : commands) {
+                if (c.name.equalsIgnoreCase(args[0])) {
+                    chatUtil.addMessage(c.name.substring(0, 1).toUpperCase() + c.name.substring(1) + " command: ");
+                    chatUtil.addMessage("Description " + fontColorUtil.DARK_GRAY + " : " + c.description);
+                    chatUtil.addMessage("Usage" + fontColorUtil.DARK_GRAY + " : " + c.usage);
+                }
+            }
+
         }
-
-        enabled = false;
 
     }
 }
