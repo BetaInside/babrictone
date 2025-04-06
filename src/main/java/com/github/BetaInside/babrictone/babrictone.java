@@ -4,6 +4,9 @@ import com.github.BetaInside.babrictone.command.command;
 import com.github.BetaInside.babrictone.command.commands.helpCommand;
 import com.github.BetaInside.babrictone.event.event;
 import com.github.BetaInside.babrictone.event.events.chatEvent;
+import com.github.BetaInside.babrictone.util.chatUtil;
+import com.github.BetaInside.babrictone.util.fontColorUtil;
+import com.llamalad7.mixinextras.lib.apache.commons.ArrayUtils;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.impl.FabricLoaderImpl;
 import net.minecraft.client.Minecraft;
@@ -30,12 +33,16 @@ public class babrictone implements ModInitializer{
 
         if((e instanceof chatEvent)) {
             String message = chatEvent.message();
-            String command = message.substring(1);
+            String commandRaw = message.substring(1);
+            String[] split = commandRaw.split(" ");
+            String command = split[0];
+            String[] args = ArrayUtils.remove(split, 0);
 
             if(message.startsWith(";")) {
                 for(command c : commands) {
                     if (command.equalsIgnoreCase(c.name)) {
-                        c.enable();
+                        chatUtil.addMessage(fontColorUtil.WHITE + "> " + commandRaw);
+                        c.enable(args);
                     }
                 }
 
@@ -53,7 +60,7 @@ public class babrictone implements ModInitializer{
     }
 
     public static Minecraft mc = (Minecraft) FabricLoaderImpl.INSTANCE.getGameInstance();
-    public static String ver = "0.00";
+    public static String ver = "0.00_1";
     public static String nameVer = "babrictone " + ver;
 
 }
