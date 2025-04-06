@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "babrictone",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "babrictone",
+  "description": "",
   "authors": [
-    "Me!"
+    "AlphaHighway"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/BetaInside/babrictone",
+    "sources": "https://github.com/BetaInside/babrictone"
   },
 
   "license": "GPLv3",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/babrictone/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "org.example.ExampleMod"
+      "com.github.BetaInside.babrictone.babrictone"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "babrictone.mixins.json"
   ],
 
   "depends": {

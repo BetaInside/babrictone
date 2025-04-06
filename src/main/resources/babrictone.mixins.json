@@ -1,11 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "org.example.mixin",
+  "package": "com.github.BetaInside.babrictone.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [],
   "client": [
-    "ExampleMixin"
+    "entityClientPlayerMPmixin"
   ],
   "injectors": {
     "defaultRequire": 1
