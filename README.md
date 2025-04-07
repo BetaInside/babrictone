@@ -8,3 +8,4 @@ Pathfinding copied from: https://github.com/cabaletta/baritone/tree/f559e45f9c23
 - [ ] Goals
 - [ ] Path.java
 - [ ] Pathfinder.java
+- [ ] Path render
