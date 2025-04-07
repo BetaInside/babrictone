@@ -10,7 +10,7 @@ public class helpCommand extends command {
 
     public helpCommand() {
 
-        super("help", false, "View all commands or help on specific ones", "help <command>");
+        super("help", false, "View all commands or specific ones", "help <command>");
 
     }
 
