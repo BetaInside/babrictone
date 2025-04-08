@@ -4,6 +4,7 @@ Pathfinding copied from: https://github.com/cabaletta/baritone/tree/f559e45f9c23
 
 ### ToDo (ToSkid):
 - [X] Node.java
+- [ ] Movement
 - [ ] Actions
 - [ ] Goals
 - [ ] Path.java
